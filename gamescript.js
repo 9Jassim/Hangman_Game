@@ -14,20 +14,50 @@ const lettersButtons = document.querySelectorAll('.letter')
 
 const nextButton = document.querySelector('#next')
 
+let wrong
+switch (difficulty) {
+  case 'easy':
+    wrong = 7
+    break
+  case 'medium':
+    wrong = 5
+    break
+  case 'hard':
+    wrong = 3
+  default:
+    wrong = 7
+    break
+}
+
 const getWord = () => {
   return 'hello'
 }
 
+const endGame = () => {
+  lettersButtons.forEach((button) => {
+    button.disabled = true
+  })
+}
+
 const checkLetterExist = (letter) => {
   const lettersDivs = document.querySelectorAll('.letters')
+  let show = false
   lettersDivs.forEach((div) => {
     if (letter === div.getAttribute('id')) {
       div.innerHTML = `${letter.toUpperCase()}`
       correct++
+      show = true
     }
   })
+
   if (correct === lettersDivs.length) {
     nextButton.disabled = false
+  } else if (!show) {
+    wrong--
+  }
+
+  if (wrong === 0) {
+    endGame()
   }
 }
 
@@ -40,6 +70,7 @@ const newRound = () => {
 
 const startRound = () => {
   nextButton.disabled = true
+
   let word = getWord()
 
   for (let i = 0; i < word.length; i++) {
