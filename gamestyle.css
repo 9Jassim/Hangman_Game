@@ -1,0 +1,14 @@
+body {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 20pxpx;
+  height: 100vh;
+  background-color: darkcyan;
+}
+
+.hangman {
+  display: flex;
+  justify-content: center;
+}
