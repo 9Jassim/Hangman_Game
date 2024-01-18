@@ -3,7 +3,7 @@ body {
   flex-flow: column wrap;
   justify-content: center;
   align-content: center;
-  gap: 20pxpx;
+  gap: 20px;
   height: 100vh;
   background-color: darkcyan;
 }
