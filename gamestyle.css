@@ -12,3 +12,13 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.word {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.letters {
+  font-size: 100px;
+}
