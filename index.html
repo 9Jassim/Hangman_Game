@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script defer src="homescript.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <title>Hangman</title>
-</head>
-<body>
-  <input type="text" placeholder="Enter user name">
-  <button>Start</button>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="homescript.js"></script>
+    <link rel="stylesheet" href="homestyle.css">
+    <title>Hangman</title>
+  </head>
+  <body>
+    <section class="difficulty">
+      <button id="easy" class="difficulties">Easy</button>
+      <button id="medium" class="difficulties">Medium</button>
+      <button id="hard" class="difficulties">Hard</button>
+    </section>
+    <section class="user-input">
+      <input type="text" placeholder="Enter user name" id="username">
+      <button id="start">Start</button>
+    </section>
+  </body>
 </html>

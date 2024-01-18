@@ -1,0 +1,33 @@
+body {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 20pxpx;
+  height: 100vh;
+  background-color: darkcyan;
+}
+
+.user-input {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  gap: 10px;
+  height: 30vh;
+}
+
+.difficulty {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  gap: 10px;
+  height: 30vh;
+}
+
+.difficulty > h1 {
+  display: block;
+}
+
+#start {
+  display: block;
+}
