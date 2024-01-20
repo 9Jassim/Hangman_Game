@@ -5,8 +5,7 @@ let score = 0
 const title = document.querySelector('#title')
 title.innerHTML += ` ${difficulty} level`
 
-const playerTitle = document.querySelector('#player-title')
-playerTitle.innerHTML = `${player}`
+const hangman = document.querySelector('.hangman')
 
 const scoreDisplay = document.querySelector('#score')
 
@@ -29,6 +28,32 @@ switch (difficulty) {
   default:
     wrong = 7
     break
+}
+
+for (let i = 0; i < wrong + 1; i++) {
+  const steps = document.createElement('div')
+  steps.setAttribute('class', 'steps')
+  if (i === 0) {
+    steps.innerHTML = '🕳️'
+  } else if (i === wrong) {
+    steps.innerHTML = '🏃'
+  } else {
+    steps.innerHTML = '_'
+  }
+  hangman.appendChild(steps)
+}
+
+const stepsDivs = document.querySelectorAll('.steps')
+
+const movePlayer = () => {
+  stepsDivs.forEach((step, i) => {
+    if (wrong === 0) {
+      stepsDivs[1].innerHTML = '_'
+    } else if (wrong === i) {
+      step.innerHTML = '🏃'
+      stepsDivs[i + 1].innerHTML = '_'
+    }
+  })
 }
 
 const getWord = async () => {
@@ -62,6 +87,7 @@ const checkLetterExist = (letter) => {
     endGame()
   } else if (!show) {
     wrong--
+    movePlayer()
   }
 
   if (wrong === 0) {
