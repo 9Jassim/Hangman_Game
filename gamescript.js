@@ -29,8 +29,12 @@ switch (difficulty) {
     break
 }
 
-const getWord = () => {
-  return 'hello'
+const getWord = async () => {
+  const response = await axios.get(
+    'https://random-word-api.vercel.app/api?words=1'
+  )
+  const word = response.data[0]
+  return word.toLowerCase()
 }
 
 const endGame = () => {
@@ -69,10 +73,10 @@ const newRound = () => {
   })
 }
 
-const startRound = () => {
+const startRound = async () => {
   nextButton.disabled = true
 
-  let word = getWord()
+  let word = await getWord()
 
   for (let i = 0; i < word.length; i++) {
     const letter = document.createElement('div')
