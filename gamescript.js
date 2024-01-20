@@ -1,12 +1,14 @@
 const difficulty = localStorage.getItem('difficulty')
 const player = localStorage.getItem('player')
 let correct = 0
-
-const title = document.querySelector('h1')
+let score = 0
+const title = document.querySelector('#title')
 title.innerHTML += ` ${difficulty} level`
 
 const playerTitle = document.querySelector('#player-title')
 playerTitle.innerHTML = `${player}`
+
+const scoreDisplay = document.querySelector('#score')
 
 const wordDisplay = document.querySelector('.word')
 
@@ -56,6 +58,7 @@ const checkLetterExist = (letter) => {
 
   if (correct === lettersDivs.length) {
     nextButton.disabled = false
+    score++
     endGame()
   } else if (!show) {
     wrong--
@@ -67,7 +70,9 @@ const checkLetterExist = (letter) => {
 }
 
 const newRound = () => {
+  scoreDisplay.innerHTML = `Score: ${score}`
   wordDisplay.innerHTML = ''
+  correct = 0
   lettersButtons.forEach((button) => {
     button.disabled = false
   })
@@ -75,7 +80,6 @@ const newRound = () => {
 
 const startRound = async () => {
   nextButton.disabled = true
-
   let word = await getWord()
 
   for (let i = 0; i < word.length; i++) {
