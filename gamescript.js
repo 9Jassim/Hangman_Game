@@ -52,6 +52,7 @@ const checkLetterExist = (letter) => {
 
   if (correct === lettersDivs.length) {
     nextButton.disabled = false
+    endGame()
   } else if (!show) {
     wrong--
   }
