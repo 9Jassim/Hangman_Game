@@ -16,19 +16,17 @@ const lettersButtons = document.querySelectorAll('.letter')
 const nextButton = document.querySelector('#next')
 
 let wrong
-switch (difficulty) {
-  case 'easy':
-    wrong = 7
-    break
-  case 'medium':
-    wrong = 5
-    break
-  case 'hard':
-    wrong = 3
-  default:
-    wrong = 7
-    break
+console.log(difficulty)
+if (difficulty === 'easy') {
+  wrong = 7
+} else if (difficulty === 'medium') {
+  wrong = 5
+} else if (difficulty === 'hard') {
+  wrong = 3
+} else {
+  wrong = 7
 }
+console.log(wrong)
 
 for (let i = 0; i < wrong + 1; i++) {
   const steps = document.createElement('div')
