@@ -6,44 +6,44 @@ const title = document.querySelector('#title')
 title.innerHTML += ` ${difficulty} level`
 
 const hangman = document.querySelector('.hangman')
-
 const scoreDisplay = document.querySelector('#score')
-
 const wordDisplay = document.querySelector('.word')
-
 const lettersButtons = document.querySelectorAll('.letter')
-
 const nextButton = document.querySelector('#next')
+const homeButton = document.querySelector('#home')
 
 let wrong
-console.log(difficulty)
-if (difficulty === 'easy') {
-  wrong = 7
-} else if (difficulty === 'medium') {
-  wrong = 5
-} else if (difficulty === 'hard') {
-  wrong = 3
-} else {
-  wrong = 7
-}
-console.log(wrong)
-
-for (let i = 0; i < wrong + 1; i++) {
-  const steps = document.createElement('div')
-  steps.setAttribute('class', 'steps')
-  if (i === 0) {
-    steps.innerHTML = '🕳️'
-  } else if (i === wrong) {
-    steps.innerHTML = '🏃'
+const setDifficulty = () => {
+  if (difficulty === 'easy') {
+    wrong = 7
+  } else if (difficulty === 'medium') {
+    wrong = 5
+  } else if (difficulty === 'hard') {
+    wrong = 3
   } else {
-    steps.innerHTML = '_'
+    wrong = 7
   }
-  hangman.appendChild(steps)
 }
 
-const stepsDivs = document.querySelectorAll('.steps')
+const resetHangman = () => {
+  setDifficulty()
+  hangman.innerHTML = ''
+  for (let i = 0; i < wrong + 1; i++) {
+    const steps = document.createElement('div')
+    steps.setAttribute('class', 'steps')
+    if (i === 0) {
+      steps.innerHTML = '🕳️'
+    } else if (i === wrong) {
+      steps.innerHTML = '🏃'
+    } else {
+      steps.innerHTML = '_'
+    }
+    hangman.appendChild(steps)
+  }
+}
 
 const movePlayer = () => {
+  const stepsDivs = document.querySelectorAll('.steps')
   stepsDivs.forEach((step, i) => {
     if (wrong === 0) {
       stepsDivs[1].innerHTML = '_'
@@ -97,12 +97,14 @@ const newRound = () => {
   scoreDisplay.innerHTML = `Score: ${score}`
   wordDisplay.innerHTML = ''
   correct = 0
+
   lettersButtons.forEach((button) => {
     button.disabled = false
   })
 }
 
 const startRound = async () => {
+  resetHangman()
   nextButton.disabled = true
   let word = await getWord()
 
@@ -127,4 +129,7 @@ nextButton.addEventListener('click', () => {
   startRound()
 })
 
+homeButton.addEventListener('click', () => {
+  location.href = 'index.html'
+})
 startRound()
