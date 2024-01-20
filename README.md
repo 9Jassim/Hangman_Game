@@ -18,6 +18,7 @@
 ### **_Technologies Used_**
 
 - Javascript
+    - API
 - HTML
 - CSS
 
@@ -25,11 +26,12 @@
 
 ### **_Getting Started_**
 
+##### Select difficulty for number of wrong guesses. Easy(7), Medium(5), or Hard(3) 
 ##### Type your user name then press play to start.
 ##### Pick a letter from the available selection.
 ##### Try guessing the word, each wrong guess get you closer to the trap.
 
-##### A Trello board was used to keep track of development progress and can be viewed [Hangman](https://trello.com/invite/b/WMz7BGI0/ATTI589ddc558cf2c1d8897e2482088daa8e4F37831F/hangman).
+##### A Trello board was used to keep track of development progress and can be viewed [Hangman](https://trello.com/b/WMz7BGI0/hangman).
 
 ##### The project was deployed and can be viewed [here](URL).
 
@@ -43,14 +45,14 @@
 
 ### **_Future Updates_**
 
-- [ ] Creat welcome page
-- [ ] Creat the game page
-- [ ] Make the game functional
+- [ ] style home page
+- [ ] style game page
+- [ ] deploy the game
 
 
 ---
 
 ### **_Credits_**
-
+[Random word API](https://random-word-api.vercel.app/)
 
 ---
