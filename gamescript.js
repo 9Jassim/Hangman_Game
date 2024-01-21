@@ -1,4 +1,4 @@
-const difficulty = localStorage.getItem('difficulty')
+let difficulty = localStorage.getItem('difficulty')
 const player = localStorage.getItem('player')
 let correct = 0
 let score = 0
@@ -142,5 +142,6 @@ nextButton.addEventListener('click', () => {
 })
 
 homeButton.addEventListener('click', () => {
+  difficulty = localStorage.setItem('difficulty', 'easy')
   location.href = 'index.html'
 })
