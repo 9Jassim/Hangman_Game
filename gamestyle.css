@@ -1,6 +1,6 @@
 body {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -70,7 +70,9 @@ body {
 footer {
   display: flex;
   justify-content: center;
+  padding: 2vh;
   gap: 4vh;
+  width: 40vh;
 }
 
 #home {
@@ -81,6 +83,7 @@ footer {
   font-family: 'Fredericka the Great', serif;
   font-size: larger;
   font-weight: bold;
+  width: 20vh;
 }
 
 #next-enable {
@@ -91,6 +94,7 @@ footer {
   font-family: 'Fredericka the Great', serif;
   font-size: larger;
   font-weight: bold;
+  width: 20vh;
 }
 
 #next {
@@ -100,4 +104,5 @@ footer {
   color: azure;
   font-family: 'Fredericka the Great', serif;
   font-size: larger;
+  width: 20vh;
 }
