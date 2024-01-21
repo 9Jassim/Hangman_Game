@@ -43,6 +43,13 @@ body {
   width: 20vh;
 }
 
+.difficulties:hover {
+  background-color: azure;
+  border: 2px solid azure;
+  color: rgb(61, 62, 62);
+  font-weight: bold;
+}
+
 #username {
   width: 40vh;
   height: 5vh;
