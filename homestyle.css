@@ -2,10 +2,12 @@ body {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   gap: 20pxpx;
   height: 100vh;
-  background-color: darkcyan;
+  background-color: rgb(61, 62, 62);
+  color: azure;
+  font-family: 'Fredericka the Great', serif;
 }
 
 .user-input {
@@ -22,7 +24,8 @@ body {
   justify-content: center;
   align-content: center;
   gap: 10px;
-  height: 30vh;
+  height: 10vh;
+  margin-bottom: 10vh;
 }
 
 .difficulty > h1 {

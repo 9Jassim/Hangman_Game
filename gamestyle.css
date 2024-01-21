@@ -6,6 +6,7 @@ body {
   gap: 20px;
   height: 100vh;
   background-color: darkcyan;
+  font-family: 'Fredericka the Great', serif;
 }
 
 .hangman {
