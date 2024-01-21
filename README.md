@@ -11,6 +11,7 @@
 ### **_Description_**
 
 #### Building a hangman game. It's a game that require the player to complete random hidden words by guessing one letter at a time
+
 #### Made this game as a project for GA Software Engineering Immersive Course
 
 ---
@@ -18,7 +19,7 @@
 ### **_Technologies Used_**
 
 - Javascript
-    - API
+  - API
 - HTML
 - CSS
 
@@ -26,9 +27,12 @@
 
 ### **_Getting Started_**
 
-##### Select difficulty for number of wrong guesses. Easy(7), Medium(5), or Hard(3) 
+##### Select difficulty for number of wrong guesses. Easy(7), Medium(5), or Hard(3)
+
 ##### Type your user name then press play to start.
+
 ##### Pick a letter from the available selection.
+
 ##### Try guessing the word, each wrong guess get you closer to the trap.
 
 ##### A Trello board was used to keep track of development progress and can be viewed [Hangman](https://trello.com/b/WMz7BGI0/hangman).
@@ -39,20 +43,30 @@
 
 ### **_Screenshots_**
 
+##### Home Page
 
+![Home page](/home%20page.png)
+
+##### Game Page
+
+![Game Page](/game%20page.png)
 
 ---
 
 ### **_Future Updates_**
 
-- [ ] style home page
-- [ ] style game page
-- [ ] deploy the game
-
+- [x] style home page
+- [x] style game page
+- [x] deploy the game
 
 ---
 
 ### **_Credits_**
-[Random word API](https://random-word-api.vercel.app/)
+
+##### [Random word API](https://random-word-api.vercel.app/)
+
+##### [Image background](https://www.shutterstock.com)
+
+##### [Font](https://fonts.google.com/specimen/Fredericka+the+Great)
 
 ---
