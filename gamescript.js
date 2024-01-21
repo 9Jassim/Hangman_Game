@@ -13,6 +13,8 @@ const nextButton = document.querySelector('#next')
 const homeButton = document.querySelector('#home')
 
 let wrong
+let word
+
 const setDifficulty = () => {
   if (difficulty === 'easy') {
     wrong = 7
@@ -46,10 +48,10 @@ const movePlayer = () => {
   const stepsDivs = document.querySelectorAll('.steps')
   stepsDivs.forEach((step, i) => {
     if (wrong === 0) {
-      stepsDivs[1].innerHTML = '_'
+      stepsDivs[1].innerHTML = '~'
     } else if (wrong === i) {
       step.innerHTML = '🏃'
-      stepsDivs[i + 1].innerHTML = '_'
+      stepsDivs[i + 1].innerHTML = '~'
     }
   })
 }
@@ -58,11 +60,17 @@ const getWord = async () => {
   const response = await axios.get(
     'https://random-word-api.vercel.app/api?words=1'
   )
-  const word = response.data[0]
-  return word.toLowerCase()
+  const newWord = response.data[0]
+  return newWord.toLowerCase()
 }
 
 const endGame = () => {
+  if (wrong === 0) {
+    const wordTitle = document.createElement('h1')
+    wordTitle.innerHTML = `You Lost, the word is : ${word} `
+    wordDisplay.innerHTML = ''
+    wordDisplay.appendChild(wordTitle)
+  }
   lettersButtons.forEach((button) => {
     button.disabled = true
   })
@@ -78,7 +86,6 @@ const checkLetterExist = (letter) => {
       show = true
     }
   })
-
   if (correct === lettersDivs.length) {
     nextButton.disabled = false
     score++
@@ -106,7 +113,7 @@ const newRound = () => {
 const startRound = async () => {
   resetHangman()
   nextButton.disabled = true
-  let word = await getWord()
+  word = await getWord()
 
   for (let i = 0; i < word.length; i++) {
     const letter = document.createElement('div')
@@ -116,6 +123,8 @@ const startRound = async () => {
     wordDisplay.appendChild(letter)
   }
 }
+
+startRound()
 
 lettersButtons.forEach((button) => {
   button.addEventListener('click', () => {
@@ -132,4 +141,3 @@ nextButton.addEventListener('click', () => {
 homeButton.addEventListener('click', () => {
   location.href = 'index.html'
 })
-startRound()
