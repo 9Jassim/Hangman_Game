@@ -80,7 +80,7 @@ footer {
   font-weight: bold;
 }
 
-.next-enable {
+#next-enable {
   background-color: azure;
   border: 2px solid rgb(61, 62, 62);
   border-radius: 5px;

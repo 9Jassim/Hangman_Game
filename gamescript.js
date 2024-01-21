@@ -88,7 +88,7 @@ const checkLetterExist = (letter) => {
   })
   if (correct === lettersDivs.length) {
     nextButton.disabled = false
-    nextButton.classList.toggle('next-enable')
+    nextButton.setAttribute('id', 'next-enable')
     score++
     endGame()
   } else if (!show) {
@@ -105,7 +105,7 @@ const newRound = () => {
   scoreDisplay.innerHTML = `Score: ${score}`
   wordDisplay.innerHTML = ''
   correct = 0
-  nextButton.classList.toggle('next-enable')
+  nextButton.setAttribute('id', 'next')
   lettersButtons.forEach((button) => {
     button.classList.remove('letter-pressed')
     button.disabled = false
