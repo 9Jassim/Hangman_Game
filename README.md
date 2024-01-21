@@ -57,7 +57,8 @@
 
 - [x] style home page
 - [x] style game page
-- [x] deploy the game
+- [] add scoreboard
+- [] deploy the game
 
 ---
 
@@ -65,7 +66,7 @@
 
 ##### [Random word API](https://random-word-api.vercel.app/)
 
-##### [Image background](https://www.shutterstock.com)
+##### [Background Image](https://www.shutterstock.com)
 
 ##### [Font](https://fonts.google.com/specimen/Fredericka+the+Great)
 
