@@ -38,7 +38,7 @@ const resetHangman = () => {
     } else if (i === wrong) {
       steps.innerHTML = '🏃'
     } else {
-      steps.innerHTML = '_'
+      steps.innerHTML = ''
     }
     hangman.appendChild(steps)
   }
@@ -88,6 +88,7 @@ const checkLetterExist = (letter) => {
   })
   if (correct === lettersDivs.length) {
     nextButton.disabled = false
+    nextButton.classList.toggle('next-enable')
     score++
     endGame()
   } else if (!show) {
@@ -104,8 +105,9 @@ const newRound = () => {
   scoreDisplay.innerHTML = `Score: ${score}`
   wordDisplay.innerHTML = ''
   correct = 0
-
+  nextButton.classList.toggle('next-enable')
   lettersButtons.forEach((button) => {
+    button.classList.remove('letter-pressed')
     button.disabled = false
   })
 }
@@ -129,7 +131,8 @@ startRound()
 lettersButtons.forEach((button) => {
   button.addEventListener('click', () => {
     checkLetterExist(button.getAttribute('id'))
-    button.setAttribute('disabled', true)
+    button.disabled = true
+    button.classList.toggle('letter-pressed')
   })
 })
 
