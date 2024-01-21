@@ -13,7 +13,7 @@ body {
 .user-input {
   display: flex;
   flex-flow: column wrap;
-  align-content: center;
+  align-items: center;
   gap: 10px;
   height: 30vh;
 }
@@ -32,6 +32,41 @@ body {
   display: block;
 }
 
+.difficulties {
+  background-color: rgb(61, 62, 62);
+  border: 2px solid azure;
+  border-radius: 5px;
+  color: azure;
+  font-family: 'Fredericka the Great', serif;
+  font-size: larger;
+  height: 10vh;
+  width: 20vh;
+}
+
+#username {
+  width: 40vh;
+  height: 5vh;
+  background-color: rgb(61, 62, 62);
+  border: 2px solid azure;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Fredericka the Great', serif;
+}
+
+::placeholder {
+  color: azure;
+  text-align: center;
+}
+
 #start {
   display: block;
+  background-color: azure;
+  border: 2px solid rgb(61, 62, 62);
+  border-radius: 5px;
+  color: rgb(61, 62, 62);
+  font-family: 'Fredericka the Great', serif;
+  font-size: larger;
+  font-weight: bold;
+  height: 10vh;
+  width: 20vh;
 }
