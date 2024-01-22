@@ -51,13 +51,17 @@
 
 ![Game Page](/game%20page.png)
 
+##### Scorboard Page
+
+![Scoreboard Page](/scoreboard.png)
+
 ---
 
 ### **_Future Updates_**
 
 - [x] style home page
 - [x] style game page
-- [] add scoreboard
+- [x] add scoreboard
 - [] deploy the game
 
 ---
