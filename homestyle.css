@@ -61,6 +61,7 @@ body {
   color: white;
   font-weight: bold;
   font-family: 'Fredericka the Great', serif;
+  text-align: center;
 }
 
 ::placeholder {
