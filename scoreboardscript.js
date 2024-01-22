@@ -4,8 +4,10 @@ const scoreboard = document.querySelector('.scoreboard')
 const homeButton = document.querySelector('#home')
 
 games.forEach((game) => {
-  const gameDiv = document.createElement('div')
-  gameDiv.innerHTML = `Username: ${game.userName} Score: ${game.score} Difficulty: ${game.difficulty}`
+  const gameDiv = document.createElement('tr')
+  gameDiv.innerHTML = `<td>${game.userName}</td>
+  <td>${game.score}</td>
+  <td>${game.difficulty}</td>`
   scoreboard.appendChild(gameDiv)
 })
 

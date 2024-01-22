@@ -22,3 +22,16 @@ body {
   font-weight: bold;
   width: 20vh;
 }
+
+table {
+  justify-content: center;
+}
+
+td {
+  text-align: center;
+  padding: 3vh;
+}
+
+.scoreboard {
+  width: 100vh;
+}
