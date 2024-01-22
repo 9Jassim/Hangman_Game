@@ -1,6 +1,7 @@
 const difficulties = document.querySelectorAll('.difficulties')
 const userName = document.querySelector('#username')
 const start = document.querySelector('#start')
+const scoreboard = document.querySelector('#scoreboard')
 const difficultyDisplay = document.querySelector('h3')
 let difficulty = ''
 
@@ -18,4 +19,8 @@ start.addEventListener('click', () => {
     localStorage.setItem('player', player)
     location.href = 'game.html'
   }
+})
+
+scoreboard.addEventListener('click', () => {
+  location.href = 'scoreboard.html'
 })
