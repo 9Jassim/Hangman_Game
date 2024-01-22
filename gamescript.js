@@ -11,9 +11,12 @@ const wordDisplay = document.querySelector('.word')
 const lettersButtons = document.querySelectorAll('.letter')
 const nextButton = document.querySelector('#next')
 const homeButton = document.querySelector('#home')
+const hintButton = document.querySelector('#hint')
+const hintDisplay = document.querySelector('#showHint')
 
 let wrong
 let word
+let definition
 let games = []
 
 if (localStorage.getItem('games') === null) {
@@ -124,6 +127,11 @@ const checkLetterExist = (letter) => {
   if (wrong === 0) {
     endGame()
   }
+
+  if (wrong === 2) {
+    hintButton.disabled = false
+    hintButton.setAttribute('id', 'hint-enable')
+  }
 }
 
 const newRound = () => {
@@ -140,8 +148,9 @@ const newRound = () => {
 const startRound = async () => {
   resetHangman()
   nextButton.disabled = true
+  hintButton.disabled = true
   word = await getWord()
-  let definition = await getDefinition(word)
+  definition = await getDefinition(word)
   console.log(definition)
 
   for (let i = 0; i < word.length; i++) {
@@ -171,4 +180,8 @@ nextButton.addEventListener('click', () => {
 homeButton.addEventListener('click', () => {
   difficulty = localStorage.setItem('difficulty', 'easy')
   location.href = 'index.html'
+})
+
+hintButton.addEventListener('click', () => {
+  hintDisplay.innerHTML = definition
 })
