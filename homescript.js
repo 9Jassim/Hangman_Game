@@ -13,7 +13,9 @@ difficulties.forEach((button) => {
 })
 
 start.addEventListener('click', () => {
-  let player = userName.value
-  localStorage.setItem('player', player)
-  location.href = 'game.html'
+  if (userName.value) {
+    let player = userName.value
+    localStorage.setItem('player', player)
+    location.href = 'game.html'
+  }
 })
