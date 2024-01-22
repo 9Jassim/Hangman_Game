@@ -77,6 +77,14 @@ const getWord = async () => {
   return newWord.toLowerCase()
 }
 
+const getDefinition = async (word) => {
+  const response = await axios.get(
+    `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+  )
+  const definition = response.data[0].meanings[0].definitions[0].definition
+  return definition
+}
+
 const endGame = () => {
   if (wrong === 0) {
     const wordTitle = document.createElement('h1')
@@ -133,6 +141,8 @@ const startRound = async () => {
   resetHangman()
   nextButton.disabled = true
   word = await getWord()
+  let definition = await getDefinition(word)
+  console.log(definition)
 
   for (let i = 0; i < word.length; i++) {
     const letter = document.createElement('div')
