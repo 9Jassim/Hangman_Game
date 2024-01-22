@@ -14,6 +14,11 @@ const homeButton = document.querySelector('#home')
 
 let wrong
 let word
+let games = []
+
+if (localStorage.getItem('games') === null) {
+  localStorage.setItem('games', JSON.stringify(games))
+}
 
 const setDifficulty = () => {
   if (difficulty === 'easy') {
@@ -78,6 +83,10 @@ const endGame = () => {
     wordTitle.innerHTML = `You Lost, the word is : ${word} `
     wordDisplay.innerHTML = ''
     wordDisplay.appendChild(wordTitle)
+    const game = createGameObject()
+    let games = JSON.parse(localStorage.getItem('games'))
+    games.push(game)
+    localStorage.setItem('games', JSON.stringify(games))
   }
   lettersButtons.forEach((button) => {
     button.disabled = true
