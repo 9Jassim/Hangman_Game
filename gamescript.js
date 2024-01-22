@@ -27,6 +27,14 @@ const setDifficulty = () => {
   }
 }
 
+const createGameObject = () => {
+  return {
+    userName: player,
+    score: score,
+    difficulty: difficulty
+  }
+}
+
 const resetHangman = () => {
   setDifficulty()
   hangman.innerHTML = ''
