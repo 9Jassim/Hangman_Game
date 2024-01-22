@@ -11,3 +11,14 @@ body {
   color: azure;
   font-family: 'Fredericka the Great', serif;
 }
+
+#home {
+  background-color: azure;
+  border: 2px solid azure;
+  border-radius: 5px;
+  color: rgb(61, 62, 62);
+  font-family: 'Fredericka the Great', serif;
+  font-size: larger;
+  font-weight: bold;
+  width: 20vh;
+}
