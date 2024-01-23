@@ -14,10 +14,12 @@ const homeButton = document.querySelector('#home')
 const hintButton = document.querySelector('#hint')
 const hintDisplay = document.querySelector('#showHint')
 
+let ended = false
 let wrong
 let word
 let definition
 let games = []
+let keyPressed = []
 
 if (localStorage.getItem('games') === null) {
   localStorage.setItem('games', JSON.stringify(games))
@@ -98,6 +100,7 @@ const endGame = () => {
     let games = JSON.parse(localStorage.getItem('games'))
     games.push(game)
     localStorage.setItem('games', JSON.stringify(games))
+    ended = true
   }
   lettersButtons.forEach((button) => {
     button.disabled = true
@@ -137,8 +140,10 @@ const checkLetterExist = (letter) => {
 const newRound = () => {
   scoreDisplay.innerHTML = `Score: ${score}`
   wordDisplay.innerHTML = ''
+  hintDisplay.innerHTML = ''
   correct = 0
   nextButton.setAttribute('id', 'next')
+  hintButton.setAttribute('id', 'hint')
   lettersButtons.forEach((button) => {
     button.classList.remove('letter-pressed')
     button.disabled = false
@@ -151,7 +156,6 @@ const startRound = async () => {
   hintButton.disabled = true
   word = await getWord()
   definition = await getDefinition(word)
-  console.log(definition)
 
   for (let i = 0; i < word.length; i++) {
     const letter = document.createElement('div')
@@ -170,6 +174,25 @@ lettersButtons.forEach((button) => {
     button.disabled = true
     button.classList.toggle('letter-pressed')
   })
+})
+
+addEventListener('keypress', (event) => {
+  if (!ended) {
+    letter = event.key
+    if (
+      !keyPressed.some((key) => {
+        return letter === key
+      })
+    ) {
+      checkLetterExist(letter.toLowerCase())
+    }
+    keyPressed.push(letter)
+    const keyButton = document
+      .querySelector('.letters-button')
+      .querySelector(`#${letter.toLowerCase()}`)
+    keyButton.disabled = true
+    keyButton.classList.add('letter-pressed')
+  }
 })
 
 nextButton.addEventListener('click', () => {
