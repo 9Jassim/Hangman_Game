@@ -5,11 +5,13 @@ const homeButton = document.querySelector('#home')
 games.sort((gameA, gameB) => gameB.score - gameA.score)
 
 games.forEach((game) => {
-  const gameDiv = document.createElement('tr')
-  gameDiv.innerHTML = `<td>${game.userName}</td>
+  if (game.score !== 0) {
+    const gameDiv = document.createElement('tr')
+    gameDiv.innerHTML = `<td>${game.userName}</td>
   <td>${game.score}</td>
   <td>${game.difficulty}</td>`
-  scoreboard.appendChild(gameDiv)
+    scoreboard.appendChild(gameDiv)
+  }
 })
 
 homeButton.addEventListener('click', () => {
