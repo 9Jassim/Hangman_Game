@@ -2,6 +2,7 @@ let games = JSON.parse(localStorage.getItem('games'))
 
 const scoreboard = document.querySelector('.scoreboard')
 const homeButton = document.querySelector('#home')
+games.sort((gameA, gameB) => gameB.score - gameA.score)
 
 games.forEach((game) => {
   const gameDiv = document.createElement('tr')
