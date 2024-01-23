@@ -100,8 +100,9 @@ const endGame = () => {
     let games = JSON.parse(localStorage.getItem('games'))
     games.push(game)
     localStorage.setItem('games', JSON.stringify(games))
-    ended = true
   }
+  ended = true
+  keyPressed = []
   lettersButtons.forEach((button) => {
     button.disabled = true
   })
@@ -111,7 +112,7 @@ const checkLetterExist = (letter) => {
   const lettersDivs = document.querySelectorAll('.letters')
   let show = false
   lettersDivs.forEach((div) => {
-    if (letter === div.getAttribute('id')) {
+    if (letter === div.getAttribute('value')) {
       div.innerHTML = `${letter.toUpperCase()}`
       correct++
       show = true
@@ -138,6 +139,7 @@ const checkLetterExist = (letter) => {
 }
 
 const newRound = () => {
+  ended = false
   scoreDisplay.innerHTML = `Score: ${score}`
   wordDisplay.innerHTML = ''
   hintDisplay.innerHTML = ''
@@ -160,7 +162,7 @@ const startRound = async () => {
   for (let i = 0; i < word.length; i++) {
     const letter = document.createElement('div')
     letter.setAttribute('class', `letters`)
-    letter.setAttribute('id', `${word[i]}`)
+    letter.setAttribute('value', `${word[i]}`)
     letter.innerHTML = `_`
     wordDisplay.appendChild(letter)
   }
