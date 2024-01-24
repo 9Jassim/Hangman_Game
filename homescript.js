@@ -5,6 +5,7 @@ const scoreboard = document.querySelector('#scoreboard')
 const difficultyDisplay = document.querySelector('h3')
 let difficulty = ''
 let games = JSON.parse(localStorage.getItem('games'))
+localStorage.setItem('difficulty', 'easy')
 
 difficulties.forEach((button) => {
   button.addEventListener('click', () => {
