@@ -12,6 +12,8 @@
 
 #### Building a hangman game. It's a game that require the player to complete random hidden words by guessing one letter at a time
 
+#### The game is developed by HTML, CSS, and Javascript coding to create dynamic, nice looking, and enjoyable word guessing game
+
 #### Made this game as a project for GA Software Engineering Immersive Course
 
 ---
