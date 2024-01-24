@@ -35,9 +35,11 @@
 
 ##### Try guessing the word, each wrong guess get you closer to the trap.
 
+##### When two guesses left you can show a hint!
+
 ##### A Trello board was used to keep track of development progress and can be viewed [Hangman](https://trello.com/b/WMz7BGI0/hangman).
 
-##### The project was deployed and can be viewed [here](URL).
+##### The project was deployed and can be viewed here [Hangman](https://hangmanga.surge.sh/).
 
 ---
 
@@ -51,7 +53,7 @@
 
 ![Game Page](/game%20page.png)
 
-##### Scorboard Page
+##### Scoreboard Page
 
 ![Scoreboard Page](/scoreboard.png)
 
@@ -62,13 +64,15 @@
 - [x] style home page
 - [x] style game page
 - [x] add scoreboard
-- [] deploy the game
+- [x] deploy the game
 
 ---
 
 ### **_Credits_**
 
 ##### [Random word API](https://random-word-api.vercel.app/)
+
+##### [Word definition API](https://dictionaryapi.dev/)
 
 ##### [Background Image](https://www.shutterstock.com)
 
