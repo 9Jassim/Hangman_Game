@@ -49,15 +49,57 @@
 
 ![Home page](/home%20page.png)
 
+###### When user enters the game, it shows a home page where the user can select difficulty and type user name. A start button for starting the game. There is a scoreboard button which takes the user to the scoreboard page
+
 ##### Game Page
 
 ![Game Page](/game%20page.png)
+
+###### When user starts a game a random word is hidden. the user can guess a letter by clicking the letter button or pressing the key on the keyboard. With each wrong answer the player get closer to the hole. when the user has two guesses left the hint button is enabled, the hint is the definition of the hidden word. When all the letters are shown, the user can go to the next round (new hidden word). when the player fall into the hole the user lose.
 
 ##### Scoreboard Page
 
 ![Scoreboard Page](/scoreboard.png)
 
+###### The scoreboard shows the recorded games, showing the username, the score and at which difficulty was played.
+
 ---
+
+### **_The Code Behind The Game:_**
+
+```
+const checkLetterExist = (letter) => {
+  const lettersDivs = document.querySelectorAll('.letters')
+  let show = false
+  lettersDivs.forEach((div) => {
+    if (letter === div.getAttribute('value')) {
+      div.innerHTML = `${letter.toUpperCase()}`
+      correct++
+      show = true
+    }
+  })
+  if (correct === lettersDivs.length) {
+    nextButton.disabled = false
+    nextButton.setAttribute('id', 'next-enable')
+    score++
+    endGame()
+  } else if (!show) {
+    wrong--
+    movePlayer()
+  }
+
+  if (wrong === 0) {
+    endGame()
+  }
+
+  if (wrong === 2) {
+    hintButton.disabled = false
+    hintButton.setAttribute('id', 'hint-enable')
+  }
+}
+```
+
+###### The checkLetterExist function works everytime the user guesses a letter. It checks if the letter exists in the current hidden word. If the letter exist, the letter is shown on the page at the correct position. Also, it checks if the word is complete to enable the the next round button. Otherwise, if the letter dose not exisit, the player move towards the hole. Finally, it checks the number of wrong guesses left. If two guesses left, the hint button is enabled. Or if the user runs out of guesses, the round ends.
 
 ### **_Future Updates_**
 
