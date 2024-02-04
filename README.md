@@ -4,7 +4,7 @@
 
 ### By: Jassim Ahmed
 
-#### [GitHub](https://github.com/9Jassim) | [LinkedIn](https://www.linkedin.com/in/jassim-mohammed-4ab7b7210/)
+#### [GitHub](https://github.com/9Jassim) | [LinkedIn](https://www.linkedin.com/in/jassimmohammed9)
 
 ---
 
